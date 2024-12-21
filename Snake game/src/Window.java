@@ -1,0 +1,20 @@
+import javax.swing.JFrame;
+//import java.awt.Color;
+// import java.awt.Graphics;
+// import java.awt.Graphics2D;
+
+import java.awt.Color;
+
+public class Window extends JFrame {
+    MyPanel panel;
+     Window() {
+        panel = new MyPanel();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        this.add(panel);
+        this.pack(); 
+        this.setBackground(Color.BLACK);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.setTitle("Snake by Hrithik Singh");
+    }
+}
