@@ -14,6 +14,7 @@ public class Window extends JFrame {
         this.pack(); 
         this.setBackground(Color.BLACK);
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
         this.setVisible(true);
         this.setTitle("Snake by Hrithik Singh");
     }
