@@ -17,6 +17,5 @@ public class MyPanel extends JPanel{
       //super.paintComponent(g);
       Graphics2D pelletG2D = (Graphics2D) g;
       pellet.paint(pelletG2D);
-      pellet.pelletCoords();
-  }
+      }
 }

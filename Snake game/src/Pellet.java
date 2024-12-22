@@ -21,6 +21,6 @@ public class Pellet{
 
         public void paint(Graphics2D pelletG2D){
             pelletG2D.setColor(color);
-            pelletG2D.fillRect(pelletX, pelletY, 10, 10);
+            pelletG2D.fillOval(pelletX, pelletY, 10, 10);
         }  
 }
