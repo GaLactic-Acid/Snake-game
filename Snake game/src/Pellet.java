@@ -8,6 +8,7 @@ public class Pellet{
     public int pelletY;
     public int panelWidth;
     public int panelHeight;
+    public boolean pelletEaten = true;
     public Pellet(Dimension panelSize) {
         this.panelWidth = panelSize.width;
         this.panelHeight = panelSize.height;
@@ -15,9 +16,10 @@ public class Pellet{
         }
         public void pelletCoords() {
             Random rand = new Random();
-            this.pelletX = rand.nextInt(panelWidth);
-            this.pelletY = rand.nextInt(panelHeight);
-        }
+                this.pelletX = rand.nextInt(panelWidth);
+                this.pelletY = rand.nextInt(panelHeight);
+                pelletEaten = false;
+            }
 
         public void paint(Graphics2D pelletG2D){
             pelletG2D.setColor(color);
