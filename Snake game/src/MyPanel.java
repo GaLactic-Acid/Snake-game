@@ -13,6 +13,7 @@ public class MyPanel extends JPanel implements MouseListener{
     this.setPreferredSize(new Dimension(PANEL_WIDTH,PANEL_HEIGHT));
     this.setBackground(Color.BLACK);
     pellet = new Pellet(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
+    this.addMouseListener(this);
     }
 
     public void paintComponent(Graphics g) {
@@ -23,8 +24,10 @@ public class MyPanel extends JPanel implements MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-      // TODO Auto-generated method stub
-    }
+      pellet.pelletEaten = true;
+      pellet.pelletCoords();
+      repaint();
+            }
 
     @Override
     public void mouseEntered(MouseEvent e) {
