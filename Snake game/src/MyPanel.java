@@ -26,9 +26,9 @@ public class MyPanel extends JPanel implements MouseListener {
 
   @Override
   public void mouseClicked(MouseEvent e) {
-    pellet.pelletEaten = true;
-    pellet.pelletCoords();
-    repaint();
+    // pellet.pelletEaten = true;
+    // pellet.pelletCoords();
+    // repaint();
   }
 
   @Override
