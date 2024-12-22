@@ -7,6 +7,8 @@ public class Pellet {
     public Color color = new Color(255, 255, 255);
     public int pelletX;
     public int pelletY;
+    public int pelletWidth = 10;
+    public int pelletHeight = 10;
     public int panelWidth;
     public int panelHeight;
     public boolean pelletEaten = true;
@@ -21,11 +23,11 @@ public class Pellet {
         Random rand = new Random();
         this.pelletX = rand.nextInt(panelWidth);
         this.pelletY = rand.nextInt(panelHeight);
-        pelletEaten = false;
+        pelletEaten = false; // removable (transfer) as score is added
     }
 
     public void paint(Graphics2D pelletG2D) {
         pelletG2D.setColor(color);
-        pelletG2D.fillOval(pelletX, pelletY, 10, 10);
+        pelletG2D.fillOval(pelletX, pelletY, pelletWidth, pelletHeight);
     }
 }
