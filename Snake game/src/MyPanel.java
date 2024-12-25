@@ -63,7 +63,7 @@ public void paintComponent(Graphics g) {
 }
 
 public void paint(Graphics2D grid){ //grid
-  grid.setColor(Color.white);
+  grid.setColor(Color.GRAY);
   grid.setStroke(new BasicStroke(1)); //change grid line thickness
   for(int i=0; i<PANEL_WIDTH; i+=25){
     grid.drawLine(i, 0, i, PANEL_HEIGHT);
