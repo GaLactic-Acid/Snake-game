@@ -10,8 +10,8 @@ import java.awt.Dimension;
 import javax.swing.Timer;
 
 public class MyPanel extends JPanel implements KeyListener, ActionListener {
-  int PANEL_WIDTH = 600;
-  int PANEL_HEIGHT = 600;
+  int PANEL_WIDTH = 500;
+  int PANEL_HEIGHT = 500;
   Pellet pellet;
   Snake snake;
   Timer timer;
