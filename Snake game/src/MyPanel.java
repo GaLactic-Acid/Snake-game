@@ -2,11 +2,11 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.Dimension;
 
-public class MyPanel extends JPanel implements MouseListener {
+public class MyPanel extends JPanel implements KeyListener {
   int PANEL_WIDTH = 800;
   int PANEL_HEIGHT = 800;
   Pellet pellet;
@@ -15,7 +15,9 @@ public class MyPanel extends JPanel implements MouseListener {
     this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
     this.setBackground(Color.BLACK);
     pellet = new Pellet(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
-    this.addMouseListener(this);
+    this.addKeyListener(this);
+    this.setFocusable(true);
+    this.requestFocusInWindow();
   }
 
   public void paintComponent(Graphics g) {
@@ -25,29 +27,23 @@ public class MyPanel extends JPanel implements MouseListener {
   }
 
   @Override
-  public void mouseClicked(MouseEvent e) {
-    // pellet.pelletEaten = true;
-    // pellet.pelletCoords();
-    // repaint();
+  public void keyPressed(KeyEvent e) {
+    if(e.getKeyCode() == KeyEvent.VK_W) {
+      pellet.pelletEaten = true;
+      pellet.pelletCoords();
+      repaint();    
+    }
   }
 
   @Override
-  public void mouseEntered(MouseEvent e) {
+  public void keyReleased(KeyEvent e) {
     // TODO Auto-generated method stub
   }
 
   @Override
-  public void mouseExited(MouseEvent e) {
+  public void keyTyped(KeyEvent e) {
     // TODO Auto-generated method stub
   }
 
-  @Override
-  public void mousePressed(MouseEvent e) {
-    // TODO Auto-generated method stub
-  }
-
-  @Override
-  public void mouseReleased(MouseEvent e) {
-    // TODO Auto-generated method stub
-  }
+  
 }
