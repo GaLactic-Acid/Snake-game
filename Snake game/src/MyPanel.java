@@ -8,6 +8,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.Dimension;
 import javax.swing.Timer;
+import java.awt.BasicStroke;
+import java.awt.Rectangle;
 
 public class MyPanel extends JPanel implements KeyListener, ActionListener {
   int PANEL_WIDTH = 500;
@@ -26,7 +28,7 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
     this.setFocusable(true);
     this.requestFocusInWindow();
 
-  timer = new Timer(10, new ActionListener(){
+  timer = new Timer(100, new ActionListener(){
   @Override
   public void actionPerformed(ActionEvent e) {
       if (snake.direction == 0) {
@@ -38,10 +40,11 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
       } else if (snake.direction == 3) {
           snake.SnakeRight();
       }
-      for(int i=0; i<snake.snakeBody.size(); i++) { // updates coords of each snake section
-          snake.snakeYPos.set(i, snake.snakeBody.get(i).y);
-          snake.snakeXPos.set(i, snake.snakeBody.get(i).x);
-      }
+      // for(int i=0; i<snake.snakeBody.size(); i++) { // updates coords of each snake section
+      //     snake.snakeYPos.set(i, snake.snakeBody.get(i).y);
+      //     snake.snakeXPos.set(i, snake.snakeBody.get(i).x);
+      // }
+      checkCollision();
       snake.checkBounds();
       repaint();
     }
@@ -53,10 +56,30 @@ public void paintComponent(Graphics g) {
   super.paintComponent(g);
   Graphics2D snakeG2D = (Graphics2D) g;
   Graphics2D pelletG2D = (Graphics2D) g;
+  Graphics2D grid = (Graphics2D) g;
   pellet.paint(pelletG2D);
+  paint(grid);
   snake.paint(snakeG2D);
 }
 
+public void paint(Graphics2D grid){ //grid
+  grid.setColor(Color.white);
+  grid.setStroke(new BasicStroke(1)); //change grid line thickness
+  for(int i=0; i<PANEL_WIDTH; i+=25){
+    grid.drawLine(i, 0, i, PANEL_HEIGHT);
+  }
+  for(int i=0; i<PANEL_HEIGHT; i+=25){
+    grid.drawLine(0, i, PANEL_WIDTH, i);
+  }
+}
+
+public void checkCollision(){
+  if(snake.snakeBody.get(0).intersects(pellet.pelletX, pellet.pelletY, pellet.pelletWidth, pellet.pelletHeight)){
+    pellet.pelletEaten = true;
+    pellet.pelletCoords();
+    snake.newSegment();
+    }
+}
 @Override
 public void actionPerformed(ActionEvent e) {
   // TODO Auto-generated method stub
