@@ -21,8 +21,9 @@ public class Pellet {
 
     public void pelletCoords() {
         Random rand = new Random();
-        this.pelletX = rand.nextInt(panelWidth);
-        this.pelletY = rand.nextInt(panelHeight);
+            int gridSize = 25; // Assuming each grid box is 25x25 pixels
+            this.pelletX = rand.nextInt(panelWidth / gridSize) * gridSize + gridSize / 2 - pelletWidth / 2;
+            this.pelletY = rand.nextInt(panelHeight / gridSize) * gridSize + gridSize / 2 - pelletHeight / 2;
         pelletEaten = false; // removable (transfer) as score is added
     }
 
