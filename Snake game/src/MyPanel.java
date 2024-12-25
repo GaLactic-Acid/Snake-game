@@ -38,6 +38,10 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
       } else if (snake.direction == 3) {
           snake.SnakeRight();
       }
+      for(int i=0; i<snake.snakeBody.size(); i++) { // updates coords of each snake section
+          snake.snakeYPos.set(i, snake.snakeBody.get(i).y);
+          snake.snakeXPos.set(i, snake.snakeBody.get(i).x);
+      }
       snake.checkBounds();
       repaint();
     }
