@@ -8,24 +8,24 @@ public class Snake {
     public int snakeX;
     public int snakeY;
     public Pellet pellet;
-    public int speed=4; // to change snake speed
+    public int speed=25; // to change snake speed
     public int direction = 3; // 0 = up, 1 = down, 2 = left, 3 = right
-    int snakeWidth = 20;
-    int snakeHeight = 20;
+    int snakeWidth = 25;
+    int snakeHeight = 25;
     Dimension panelSize;
     public ArrayList<Rectangle> snakeBody = new ArrayList<Rectangle>();
-    public ArrayList<Integer> snakeXPos = new ArrayList<Integer>();
-    public ArrayList<Integer> snakeYPos = new ArrayList<Integer>();
+    // public ArrayList<Integer> snakeXPos = new ArrayList<Integer>();
+    // public ArrayList<Integer> snakeYPos = new ArrayList<Integer>();
 
     // add position of snake tail as attribute
     public Snake(int snakeX, int snakeY, Pellet pellet, Dimension panelSize) {
         snakeBody.add(new Rectangle(snakeX,snakeY,snakeWidth,snakeHeight));
-        snakeXPos.add(snakeBody.get(0).x);
-        snakeYPos.add(snakeBody.get(0).y);
+        // snakeXPos.add(snakeBody.get(0).x);
+        // snakeYPos.add(snakeBody.get(0).y);
         for(int i=1; i<4; i++) {
-            snakeBody.add(new Rectangle(snakeXPos.get(i-1)-20,snakeYPos.get(i-1),snakeWidth,snakeHeight));
-            snakeXPos.add(snakeBody.get(i).x);
-            snakeYPos.add(snakeBody.get(i).y);
+            snakeBody.add(new Rectangle(snakeBody.get(i-1).x-20,snakeBody.get(i-1).x,snakeWidth,snakeHeight));
+            // snakeXPos.add(snakeBody.get(i).x);
+            // snakeYPos.add(snakeBody.get(i).y);
         }
         this.panelSize = panelSize;
         this.pellet = pellet;
@@ -123,5 +123,20 @@ public void checkBounds() {
     // if(snakeY>panelSize.height) {
     //     snakeY = 0;
     // }
+}
+
+public void newSegment(){
+    if(direction==0){
+        snakeBody.add(new Rectangle(snakeBody.get(snakeBody.size()-1).x,snakeBody.get(snakeBody.size()-1).y+snakeHeight,snakeWidth,snakeHeight));
+    }
+    if(direction==1){
+        snakeBody.add(new Rectangle(snakeBody.get(snakeBody.size()-1).x,snakeBody.get(snakeBody.size()-1).y-snakeHeight,snakeWidth,snakeHeight));
+    }
+    if(direction==2){
+        snakeBody.add(new Rectangle(snakeBody.get(snakeBody.size()-1).x+snakeWidth,snakeBody.get(snakeBody.size()-1).y,snakeWidth,snakeHeight));
+    }
+    if(direction==3){
+        snakeBody.add(new Rectangle(snakeBody.get(snakeBody.size()-1).x-snakeWidth,snakeBody.get(snakeBody.size()-1).y,snakeWidth,snakeHeight));
+    }
 }
 }
