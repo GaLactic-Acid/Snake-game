@@ -15,12 +15,13 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
   Pellet pellet;
   Snake snake;
   Timer timer;
+  Dimension panelSize = new Dimension(PANEL_WIDTH, PANEL_HEIGHT);
 
   MyPanel() {
-    this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
+    this.setPreferredSize(panelSize);
     this.setBackground(Color.BLACK);
-    pellet = new Pellet(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
-    snake = new Snake(PANEL_WIDTH/2, PANEL_HEIGHT/2, pellet);
+    pellet = new Pellet(panelSize);
+    snake = new Snake(PANEL_WIDTH/2, PANEL_HEIGHT/2, pellet, panelSize);
     this.addKeyListener(this);
     this.setFocusable(true);
     this.requestFocusInWindow();
@@ -37,6 +38,7 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
       } else if (snake.direction == 3) {
           snake.SnakeRight();
       }
+      snake.checkBounds();
       repaint();
     }
   });
