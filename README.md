@@ -25,3 +25,4 @@ An attempt at making the classic snake game in java by myself.
 - Added endScreen with Gameover and final score
 - **Finished basic game of snake**
 - Fixed bug where snake could go off screen
+- removed redundant code in 'actionPerformed' method found in 'MyPanel.java'
