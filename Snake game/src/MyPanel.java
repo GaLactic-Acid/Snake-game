@@ -27,10 +27,10 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
     this.setFocusable(true);
     this.requestFocusInWindow();
 
-  timer = new Timer(100, new ActionListener(){
+  timer = new Timer(300, new ActionListener(){
   @Override
   public void actionPerformed(ActionEvent e) { // 0 = up, 1 = down, 2 = left, 3 = right
-      if (snake.direction == 0 && snake.pDirection == 1) {
+      if (snake.direction == 0 && snake.pDirection == 1) { // combine the bottom ones with the top by ||
           snake.SnakeDown();
           snake.pDirection = 1;
       } else if (snake.direction == 1 && snake.pDirection == 0) {
@@ -126,16 +126,16 @@ public void actionPerformed(ActionEvent e) {
 
 @Override
 public void keyPressed(KeyEvent e) {
-    if (e.getKeyCode() == KeyEvent.VK_W) {
+    if (e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_UP) {
         snake.direction = 0;
         System.out.println("Snake moved up");
-    } else if (e.getKeyCode() == KeyEvent.VK_S) {
+    } else if (e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_DOWN) {
         snake.direction = 1;
         System.out.println("Snake moved down");
-    } else if (e.getKeyCode() == KeyEvent.VK_A) {
+    } else if (e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_LEFT) {
         snake.direction = 2;
         System.out.println("Snake moved left");
-    } else if (e.getKeyCode() == KeyEvent.VK_D) {
+    } else if (e.getKeyCode() == KeyEvent.VK_D || e.getKeyCode() == KeyEvent.VK_RIGHT) {
         snake.direction = 3;
         System.out.println("Snake moved right");
     }
