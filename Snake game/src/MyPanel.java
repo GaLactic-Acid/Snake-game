@@ -57,12 +57,14 @@ public void paintComponent(Graphics g) {
   Graphics2D snakeG2D = (Graphics2D) g;
   Graphics2D pelletG2D = (Graphics2D) g;
   Graphics2D grid = (Graphics2D) g;
+  Graphics2D Score = (Graphics2D) g;
   pellet.paint(pelletG2D);
-  paint(grid);
+  paintGrid(grid);
   snake.paint(snakeG2D);
+  paintScore(Score);
 }
 
-public void paint(Graphics2D grid){ //grid
+public void paintGrid(Graphics2D grid){ //grid
   grid.setColor(Color.GRAY);
   grid.setStroke(new BasicStroke(1)); //change grid line thickness
   for(int i=0; i<PANEL_WIDTH; i+=25){
@@ -71,6 +73,12 @@ public void paint(Graphics2D grid){ //grid
   for(int i=0; i<PANEL_HEIGHT; i+=25){
     grid.drawLine(0, i, PANEL_WIDTH, i);
   }
+}
+
+public void paintScore(Graphics2D Score){
+  Score.setColor(Color.WHITE);
+  Score.setFont(Score.getFont().deriveFont(18f)); // Set font size to 18
+  Score.drawString("Score: " + (snake.snakeBody.size()-4), 10, 20);
 }
 
 public void checkCollision(){
