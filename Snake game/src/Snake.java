@@ -35,7 +35,7 @@ public class Snake {
     };
 
     public void paint(Graphics2D snakeG2D) {
-        snakeG2D.setColor(Color.white);
+        snakeG2D.setColor(Color.GREEN);
         // snakeG2D.fillRect(snakeX,snakeY,snakeWidth,snakeHeight);
         for(Rectangle r: snakeBody) {
             snakeG2D.fillRect(r.x,r.y,snakeWidth,snakeHeight);
@@ -72,31 +72,25 @@ public class Snake {
     }
 
 public void checkBoundsEndless() {
-    if(snakeBody.get(0).x<0-snakeWidth) {
+    if(snakeBody.get(0).x<0+snakeWidth) {
         snakeX = panelSize.width;
     }
-    if(snakeBody.get(0).x>panelSize.width+snakeWidth) {
+    if(snakeBody.get(0).x>=panelSize.width-snakeWidth) {
         snakeX =0;
     }
-    if(snakeBody.get(0).y<0-snakeHeight) {
+    if(snakeBody.get(0).y<0 + snakeHeight) {
         snakeY = panelSize.height;
     }
-    if(snakeBody.get(0).y>panelSize.height) {
+    if(snakeBody.get(0).y>=panelSize.height - snakeHeight) {
         snakeY = 0;
     }
+}
 
-    // if(snakeX<0-snakeWidth) {
-    //     snakeX = panelSize.width;
-    // }
-    // if(snakeX>panelSize.width) {
-    //     snakeX = 0;
-    // }
-    // if(snakeY<0-snakeHeight) {
-    //     snakeY = panelSize.height;
-    // }
-    // if(snakeY>panelSize.height) {
-    //     snakeY = 0;
-    // }
+public boolean endGame(){
+    if(snakeBody.get(0).x<0 + snakeWidth || snakeBody.get(0).x>=panelSize.width - snakeWidth || snakeBody.get(0).y<0 + snakeHeight || snakeBody.get(0).y>=panelSize.height - snakeHeight){
+        return true;
+    }
+    return false;
 }
 
 public void newSegment(){
