@@ -100,7 +100,6 @@ public void paintScore(Graphics2D Score){
 
 public void checkCollision(){
   if(snake.snakeBody.get(0).intersects(pellet.pelletX, pellet.pelletY, pellet.pelletWidth, pellet.pelletHeight)){
-    pellet.pelletEaten = true;
     pellet.pelletCoords();
     snake.newSegment();
     }

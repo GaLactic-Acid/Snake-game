@@ -15,18 +15,11 @@ public class Snake {
     int snakeHeight = 25;
     Dimension panelSize;
     public ArrayList<Rectangle> snakeBody = new ArrayList<Rectangle>();
-    // public ArrayList<Integer> snakeXPos = new ArrayList<Integer>();
-    // public ArrayList<Integer> snakeYPos = new ArrayList<Integer>();
-
-    // add position of snake tail as attribute
     public Snake(int snakeX, int snakeY, Pellet pellet, Dimension panelSize) {
         snakeBody.add(new Rectangle(snakeX,snakeY,snakeWidth,snakeHeight));
-        // snakeXPos.add(snakeBody.get(0).x);
-        // snakeYPos.add(snakeBody.get(0).y);
         for(int i=1; i<4; i++) {
             snakeBody.add(new Rectangle(snakeBody.get(i-1).x-20,snakeBody.get(i-1).x,snakeWidth,snakeHeight));
-            // snakeXPos.add(snakeBody.get(i).x);
-            // snakeYPos.add(snakeBody.get(i).y);
+
         }
         this.panelSize = panelSize;
         this.pellet = pellet;
@@ -36,11 +29,10 @@ public class Snake {
 
     public void paint(Graphics2D snakeG2D) {
         snakeG2D.setColor(Color.GREEN);
-        // snakeG2D.fillRect(snakeX,snakeY,snakeWidth,snakeHeight);
         for(Rectangle r: snakeBody) {
             snakeG2D.fillRect(r.x,r.y,snakeWidth,snakeHeight);
         }
-        // snakeG2D.fillRect(snakeBody.get(0).x,snakeBody.get(0).y,snakeWidth,snakeHeight);
+
     }
 
     public void SnakeRight() {
