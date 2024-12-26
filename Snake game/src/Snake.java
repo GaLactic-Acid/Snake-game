@@ -10,6 +10,7 @@ public class Snake {
     public Pellet pellet;
     public int speed=25; // to change snake speed
     public int direction = 3; // 0 = up, 1 = down, 2 = left, 3 = right
+    public int pDirection = 3; // previous direction
     int snakeWidth = 25;
     int snakeHeight = 25;
     Dimension panelSize;
@@ -43,72 +44,45 @@ public class Snake {
     }
 
     public void SnakeRight() {
-        snakeBody.get(0).x+=speed;
-        for (int i = 1; i < snakeBody.size(); i++) {
-            if(snakeBody.get(i-1).x>0){
-            snakeBody.get(i).x = snakeBody.get(i-1).x-snakeWidth;
-            snakeBody.get(i).y = snakeBody.get(i-1).y;
-            }
-            else {
-                snakeBody.get(i).x+=speed;
-            }
-        }
-        // this.snakeX+=speed;
+        moveSnake();
+        snakeX+=speed;
     }
 
     public void SnakeLeft() {
-        snakeBody.get(0).x-=speed;
-        for (int i = 1; i < snakeBody.size(); i++) {
-            if(snakeBody.get(i-1).x<panelSize.width-snakeWidth){
-            snakeBody.get(i).x = snakeBody.get(i-1).x+snakeWidth;
-            snakeBody.get(i).y = snakeBody.get(i-1).y;
-            }
-            else {
-                snakeBody.get(i).x-=speed;
-            }
-        }
-        // this.snakeX-=speed;
+        moveSnake();
+        snakeX-=speed;
     }
 
     public void SnakeUp() {
-        snakeBody.get(0).y-=speed;
-        for (int i = 1; i < snakeBody.size(); i++) {
-            if(snakeBody.get(i-1).y<panelSize.height-snakeHeight){
-            snakeBody.get(i).y = snakeBody.get(i-1).y+20;
-            snakeBody.get(i).x = snakeBody.get(i-1).x;
-            }
-            else {
-                snakeBody.get(i).y-=speed;
-            }
-        }
-        // this.snakeY-=speed;
+        moveSnake();
+        snakeY-=speed;
     }
 
     public void SnakeDown() {
-        snakeBody.get(0).y+=speed;
-        for (int i = 1; i < snakeBody.size(); i++) {
-            if(snakeBody.get(i-1).y>snakeHeight){
-            snakeBody.get(i).y = snakeBody.get(i-1).y-20;
-            snakeBody.get(i).x = snakeBody.get(i-1).x;
-        }
-            else{
-                snakeBody.get(i).y+=speed;
-            }
-        }
-        // this.snakeY+=speed;
+        moveSnake();
+        snakeY+=speed;
+
     }
-public void checkBounds() {
+
+    private void moveSnake() {
+        for (int i = snakeBody.size() - 1; i > 0; i--) {
+            snakeBody.get(i).setLocation(snakeBody.get(i - 1).x, snakeBody.get(i - 1).y);
+        }
+        snakeBody.get(0).setLocation(snakeX, snakeY);
+    }
+
+public void checkBoundsEndless() {
     if(snakeBody.get(0).x<0-snakeWidth) {
-        snakeBody.get(0).x = panelSize.width;
+        snakeX = panelSize.width;
     }
     if(snakeBody.get(0).x>panelSize.width+snakeWidth) {
-        snakeBody.get(0).x =0;
+        snakeX =0;
     }
     if(snakeBody.get(0).y<0-snakeHeight) {
-        snakeBody.get(0).y = panelSize.height;
+        snakeY = panelSize.height;
     }
     if(snakeBody.get(0).y>panelSize.height) {
-        snakeBody.get(0).y = 0;
+        snakeY = 0;
     }
 
     // if(snakeX<0-snakeWidth) {
