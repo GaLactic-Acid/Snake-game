@@ -72,23 +72,30 @@ public class Snake {
     }
 
 public void checkBoundsEndless() {
-    if(snakeBody.get(0).x<0+snakeWidth) {
+    if(snakeBody.get(0).x<0-snakeWidth + 1) {
         snakeX = panelSize.width;
     }
-    if(snakeBody.get(0).x>=panelSize.width-snakeWidth) {
+    if(snakeBody.get(0).x>=panelSize.width - snakeWidth + 1) {
         snakeX =0;
     }
-    if(snakeBody.get(0).y<0 + snakeHeight) {
+    if(snakeBody.get(0).y<0 - snakeHeight + 1) {
         snakeY = panelSize.height;
     }
-    if(snakeBody.get(0).y>=panelSize.height - snakeHeight) {
+    if(snakeBody.get(0).y>panelSize.height - snakeHeight + 1) {
         snakeY = 0;
     }
 }
 
 public boolean endGame(){
-    if(snakeBody.get(0).x<0 + snakeWidth || snakeBody.get(0).x>=panelSize.width - snakeWidth || snakeBody.get(0).y<0 + snakeHeight || snakeBody.get(0).y>=panelSize.height - snakeHeight){
+    if(snakeBody.get(0).x<0 - snakeWidth + 1 || snakeBody.get(0).x>=panelSize.width - snakeWidth + 1 || snakeBody.get(0).y<0 - snakeHeight + 1 || snakeBody.get(0).y>panelSize.height - snakeHeight + 1){
         return true;
+    }
+    if(snakeBody.size()>4){ // removes chances of snake dying at the start
+        for(int i=4; i<snakeBody.size(); i++){
+            if(snakeBody.get(0).x==snakeBody.get(i).x && snakeBody.get(0).y==snakeBody.get(i).y){
+                return true;
+            }
+        }
     }
     return false;
 }
