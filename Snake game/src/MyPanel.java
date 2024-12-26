@@ -79,6 +79,7 @@ public void paintComponent(Graphics g) {
   if(snake.endGame() == true){
   paintGameOver(gameOver);
   timer.stop();
+  snake.snakeBody.clear(); // stops snake from moving after game over (but is still displayed in final form due to timer.stop)
 }
 }
 
