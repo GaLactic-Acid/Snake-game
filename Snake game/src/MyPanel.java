@@ -9,7 +9,6 @@ import java.awt.event.KeyListener;
 import java.awt.Dimension;
 import javax.swing.Timer;
 import java.awt.BasicStroke;
-import java.awt.Rectangle;
 
 public class MyPanel extends JPanel implements KeyListener, ActionListener {
   int PANEL_WIDTH = 500;
@@ -59,7 +58,7 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
       }
       else snake.direction = snake.pDirection;
       checkCollision();
-      snake.checkBoundsEndless();
+      // snake.checkBoundsEndless();
       repaint();
     }
   });
@@ -72,10 +71,15 @@ public void paintComponent(Graphics g) {
   Graphics2D pelletG2D = (Graphics2D) g;
   Graphics2D grid = (Graphics2D) g;
   Graphics2D Score = (Graphics2D) g;
+  Graphics2D gameOver = (Graphics2D) g;
   pellet.paint(pelletG2D);
   paintGrid(grid);
   snake.paint(snakeG2D);
   paintScore(Score);
+  if(snake.endGame() == true){
+  paintGameOver(gameOver);
+  timer.stop();
+}
 }
 
 public void paintGrid(Graphics2D grid){ //grid
@@ -87,6 +91,18 @@ public void paintGrid(Graphics2D grid){ //grid
   for(int i=0; i<PANEL_HEIGHT; i+=25){
     grid.drawLine(0, i, PANEL_WIDTH, i);
   }
+}
+public void paintGameOver(Graphics2D gameOver) {
+  gameOver.setColor(Color.red);
+  gameOver.setFont(gameOver.getFont().deriveFont(50f));
+  String gameOverText = "GAME OVER";
+  int gameOverWidth = gameOver.getFontMetrics().stringWidth(gameOverText);
+  gameOver.drawString(gameOverText, (PANEL_WIDTH - gameOverWidth) / 2, PANEL_HEIGHT / 2);
+  gameOver.setColor(Color.WHITE);
+  gameOver.setFont(gameOver.getFont().deriveFont(20f));
+  String finalScoreText = "Final Score: " + (snake.snakeBody.size() - 4);
+  int finalScoreWidth = gameOver.getFontMetrics().stringWidth(finalScoreText);
+  gameOver.drawString(finalScoreText, (PANEL_WIDTH - finalScoreWidth) / 2, PANEL_HEIGHT / 2 + 25);
 }
 
 public void paintScore(Graphics2D Score){
