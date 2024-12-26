@@ -58,7 +58,7 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
       }
       else snake.direction = snake.pDirection;
       checkCollision();
-      // snake.checkBoundsEndless();
+      // snake.checkBoundsEndless(); // for endless boundaries
       repaint();
     }
   });
