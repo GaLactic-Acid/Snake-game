@@ -27,7 +27,7 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
     this.setFocusable(true);
     this.requestFocusInWindow();
 
-  timer = new Timer(300, new ActionListener(){
+  timer = new Timer(100, new ActionListener(){
   @Override
   public void actionPerformed(ActionEvent e) { // 0 = up, 1 = down, 2 = left, 3 = right
       if (snake.direction == 0 && snake.pDirection == 1) { // combine the bottom ones with the top by ||
