@@ -30,22 +30,36 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
 
   timer = new Timer(100, new ActionListener(){
   @Override
-  public void actionPerformed(ActionEvent e) {
-      if (snake.direction == 0) {
+  public void actionPerformed(ActionEvent e) { // 0 = up, 1 = down, 2 = left, 3 = right
+      if (snake.direction == 0 && snake.pDirection == 1) {
+          snake.SnakeDown();
+          snake.pDirection = 1;
+      } else if (snake.direction == 1 && snake.pDirection == 0) {
           snake.SnakeUp();
+          snake.pDirection = 0;
+      } else if (snake.direction == 2 && snake.pDirection == 3) {
+          snake.SnakeRight();
+          snake.pDirection = 3;
+      } else if (snake.direction == 3 && snake.pDirection == 2) {
+          snake.SnakeLeft();
+          snake.pDirection = 2;
+      }
+      else if (snake.direction == 0) {
+          snake.SnakeUp();
+          snake.pDirection = 0;
       } else if (snake.direction == 1) {
           snake.SnakeDown();
+          snake.pDirection = 1;
       } else if (snake.direction == 2) {
           snake.SnakeLeft();
+          snake.pDirection = 2;
       } else if (snake.direction == 3) {
           snake.SnakeRight();
+          snake.pDirection = 3;
       }
-      // for(int i=0; i<snake.snakeBody.size(); i++) { // updates coords of each snake section
-      //     snake.snakeYPos.set(i, snake.snakeBody.get(i).y);
-      //     snake.snakeXPos.set(i, snake.snakeBody.get(i).x);
-      // }
+      else snake.direction = snake.pDirection;
       checkCollision();
-      snake.checkBounds();
+      snake.checkBoundsEndless();
       repaint();
     }
   });
