@@ -21,4 +21,7 @@ An attempt at making the classic snake game in java by myself.
 
 **26/12/2024:**
 - Added 'paintScore' in 'MyPanel.java' to display the size increase of the snake.
-- 
+- Added snake collision to itself
+- Added endScreen with Gameover and final score
+- **Finished basic game of snake**
+- Fixed bug where snake could go off screen
