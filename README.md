@@ -26,3 +26,6 @@ An attempt at making the classic snake game in java by myself.
 - **Finished basic game of snake**
 - Fixed bug where snake could go off screen
 - removed redundant code in 'actionPerformed' method found in 'MyPanel.java'
+
+**28/12/2024**
+- Resolved issue in MyPanel.java's 'actionPerformed' method to prevent illegal snake movement, ensuring the snake cannot move in the opposite direction (e.g., if the snake is moving up, it cannot immediately move down).
