@@ -32,6 +32,7 @@ An attempt at making the classic snake game in java by myself.
 
 
 ## Future Potential Features
+- Add retry button
 - GameMode where the computer plays the snake game (AI)
 - Add extra obsticles which get more difficult as the game progresses
 - Create a menu to select gameModes
