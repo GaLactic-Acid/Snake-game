@@ -24,7 +24,7 @@ An attempt at making the classic snake game in java by myself.
 - Added snake collision to itself
 - Added endScreen with Gameover and final score
 - **Finished basic game of snake**
-- Fixed bug where snake could go off screen
+- Fixed bug where snake could go off-screen
 - removed redundant code in 'actionPerformed' method found in 'MyPanel.java'
 
 **28/12/2024**
@@ -32,9 +32,9 @@ An attempt at making the classic snake game in java by myself.
 
 
 ## Future Potential Features
-- Add retry button
+- Add a retry button
 - GameMode where the computer plays the snake game (AI)
-- Add extra obsticles which get more difficult as the game progresses
+- Add extra obstacles which get more difficult as the game progresses
 - Create a menu to select gameModes
-- More details to snake and background
+- More details to the snake and background
 - Make game animation more fluent (snake movement is chunky as of now)
