@@ -66,7 +66,7 @@ public void paintComponent(Graphics g) {
   paintScore(Score);
   if(snake.endGame() == true){
   paintGameOver(gameOver);
-  timer.stop();
+  timer.stop(); // stops action listener which stops game from repainting
   snake.snakeBody.clear(); // stops snake from moving after game over (but is still displayed in final form due to timer.stop)
 }
 }
@@ -100,7 +100,7 @@ public void paintScore(Graphics2D Score){
   Score.drawString("Score: " + (snake.snakeBody.size()-4), 10, 20);
 }
 
-public void checkCollision(){
+public void checkCollision(){ // check if snake head touches pellet then reset pellet coords and add new segment to snake 
   if(snake.snakeBody.get(0).intersects(pellet.pelletX, pellet.pelletY, pellet.pelletWidth, pellet.pelletHeight)){
     pellet.pelletCoords();
     snake.newSegment();
