@@ -29,3 +29,11 @@ An attempt at making the classic snake game in java by myself.
 
 **28/12/2024**
 - Resolved issue in MyPanel.java's 'actionPerformed' method to prevent illegal snake movement, ensuring the snake cannot move in the opposite direction (e.g., if the snake is moving up, it cannot immediately move down).
+
+
+## Future Potential Features
+- GameMode where the computer plays the snake game (AI)
+- Add extra obsticles which get more difficult as the game progresses
+- Create a menu to select gameModes
+- More details to snake and background
+- Make game animation more fluent (snake movement is chunky as of now)
