@@ -106,9 +106,7 @@ public void checkCollision(){ // check if snake head touches pellet then reset p
     snake.newSegment();
     }
 }
-@Override
-public void actionPerformed(ActionEvent e) {
-}
+
 
 @Override
 public void keyPressed(KeyEvent e) {
@@ -126,6 +124,11 @@ public void keyPressed(KeyEvent e) {
         System.out.println("Snake moved right");
     }
       repaint();
+}
+
+
+@Override
+public void actionPerformed(ActionEvent e) {
 }
   @Override
   public void keyReleased(KeyEvent e) {
