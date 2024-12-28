@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import java.util.ArrayList;
 import java.awt.Rectangle;
 public class Snake {
-
+    public boolean boundaries; // true = walls, false = no walls
     public int snakeX;
     public int snakeY;
     public Pellet pellet;
@@ -15,12 +15,13 @@ public class Snake {
     int snakeHeight = 25;
     Dimension panelSize;
     public ArrayList<Rectangle> snakeBody = new ArrayList<Rectangle>();
-    public Snake(int snakeX, int snakeY, Pellet pellet, Dimension panelSize) {
+    public Snake(int snakeX, int snakeY, Pellet pellet, Dimension panelSize, boolean boundaries) {
         snakeBody.add(new Rectangle(snakeX,snakeY,snakeWidth,snakeHeight));
         for(int i=1; i<4; i++) {
             snakeBody.add(new Rectangle(snakeBody.get(i-1).x-20,snakeBody.get(i-1).x,snakeWidth,snakeHeight));
 
         }
+        this.boundaries = boundaries;
         this.panelSize = panelSize;
         this.pellet = pellet;
         this.snakeX = snakeX;
@@ -79,9 +80,12 @@ public void checkBoundsEndless() {
 }
 
 public boolean endGame(){
+    // comment out this if statement if u want endless boundaries
+    if(boundaries == true){
     if(snakeBody.get(0).x<0 - snakeWidth + 1 || snakeBody.get(0).x>=panelSize.width - snakeWidth + 1 || snakeBody.get(0).y<0 - snakeHeight + 1 || snakeBody.get(0).y>panelSize.height - snakeHeight + 1){
         return true;
     }
+    } 
     if(snakeBody.size()>4){ // removes chances of snake dying at the start
         for(int i=4; i<snakeBody.size(); i++){
             if(snakeBody.get(0).x==snakeBody.get(i).x && snakeBody.get(0).y==snakeBody.get(i).y){
