@@ -19,10 +19,10 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
   Snake snake;
   Timer timer;
   Dimension panelSize = new Dimension(PANEL_WIDTH, PANEL_HEIGHT);
-  Image reset;
+  Image resetIcon;
 
   MyPanel() {
-    reset = new ImageIcon("images/red reset.png").getImage();
+    resetIcon = new ImageIcon("images/red reset.png").getImage();
     this.setPreferredSize(panelSize);
     this.setBackground(Color.BLACK);
     pellet = new Pellet(panelSize);
@@ -103,7 +103,7 @@ public void paintGameOver(Graphics2D gameOver) {
   gameOver.drawString(finalScoreText, (PANEL_WIDTH - finalScoreWidth) / 2, PANEL_HEIGHT / 2 + 25);
 
   //reset button image
-  gameOver.drawImage(reset, PANEL_WIDTH/2 - 25, PANEL_HEIGHT/2 + 30, null);
+  gameOver.drawImage(resetIcon, PANEL_WIDTH/2 - resetIcon.getWidth(null)/2, PANEL_HEIGHT/2 + resetIcon.getHeight(null)/2 + 5, null);
 }
 
 public void paintScore(Graphics2D Score){
