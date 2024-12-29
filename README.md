@@ -6,6 +6,7 @@ An attempt at making the classic snake game in java by myself.
 - 2D Graphics: https://www.youtube.com/watch?v=KcEvHq8Pqs0&t=426ss
 -  Java MouseListener: https://www.youtube.com/watch?v=jptf1Wd_omw
 - reset Button: https://www.youtube.com/watch?v=cA1GvZ5Y3-U
+- how to make Jbutton invisible: https://stackoverflow.com/questions/5654208/making-a-jbutton-invisible-but-clickable
 
 
 ## Progress
