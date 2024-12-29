@@ -32,8 +32,10 @@ An attempt at making the classic snake game in java by myself.
 - **First (pre)release of 'Snake Game by Hrithik Singh' in both exe and JAR file form.**
 
 
+**29/12/2024**
+- Added reset button
+
 ## Future Potential Features
-- Add a retry button (in progress)
 - GameMode where the computer plays the snake game (AI)
 - Add extra obstacles which get more difficult as the game progresses
 - Create a menu to select gameModes
