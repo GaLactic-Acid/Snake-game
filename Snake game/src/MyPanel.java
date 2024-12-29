@@ -1,7 +1,9 @@
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -17,8 +19,10 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
   Snake snake;
   Timer timer;
   Dimension panelSize = new Dimension(PANEL_WIDTH, PANEL_HEIGHT);
+  Image reset;
 
   MyPanel() {
+    reset = new ImageIcon("images/red reset.png").getImage();
     this.setPreferredSize(panelSize);
     this.setBackground(Color.BLACK);
     pellet = new Pellet(panelSize);
@@ -60,14 +64,17 @@ public void paintComponent(Graphics g) {
   Graphics2D grid = (Graphics2D) g;
   Graphics2D Score = (Graphics2D) g;
   Graphics2D gameOver = (Graphics2D) g;
+
   pellet.paint(pelletG2D);
   paintGrid(grid);
   snake.paint(snakeG2D);
   paintScore(Score);
+  
   if(snake.endGame() == true){
   paintGameOver(gameOver);
   timer.stop(); // stops action listener which stops game from repainting
   snake.snakeBody.clear(); // stops snake from moving after game over (but is still displayed in final form due to timer.stop)
+  
 }
 }
 
@@ -87,11 +94,16 @@ public void paintGameOver(Graphics2D gameOver) {
   String gameOverText = "GAME OVER";
   int gameOverWidth = gameOver.getFontMetrics().stringWidth(gameOverText);
   gameOver.drawString(gameOverText, (PANEL_WIDTH - gameOverWidth) / 2, PANEL_HEIGHT / 2);
+
+
   gameOver.setColor(Color.WHITE);
   gameOver.setFont(gameOver.getFont().deriveFont(20f));
   String finalScoreText = "Final Score: " + (snake.snakeBody.size() - 4);
   int finalScoreWidth = gameOver.getFontMetrics().stringWidth(finalScoreText);
   gameOver.drawString(finalScoreText, (PANEL_WIDTH - finalScoreWidth) / 2, PANEL_HEIGHT / 2 + 25);
+
+  //reset button image
+  gameOver.drawImage(reset, PANEL_WIDTH/2 - 25, PANEL_HEIGHT/2 + 30, null);
 }
 
 public void paintScore(Graphics2D Score){
@@ -99,6 +111,7 @@ public void paintScore(Graphics2D Score){
   Score.setFont(Score.getFont().deriveFont(18f)); // Set font size to 18
   Score.drawString("Score: " + (snake.snakeBody.size()-4), 10, 20);
 }
+
 
 public void checkCollision(){ // check if snake head touches pellet then reset pellet coords and add new segment to snake 
   if(snake.snakeBody.get(0).intersects(pellet.pelletX, pellet.pelletY, pellet.pelletWidth, pellet.pelletHeight)){
