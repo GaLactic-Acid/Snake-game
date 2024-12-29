@@ -5,6 +5,7 @@ An attempt at making the classic snake game in java by myself.
 **All references/resources used for aid in this project:**
 - 2D Graphics: https://www.youtube.com/watch?v=KcEvHq8Pqs0&t=426ss
 -  Java MouseListener: https://www.youtube.com/watch?v=jptf1Wd_omw
+- reset Button: https://www.youtube.com/watch?v=cA1GvZ5Y3-U
 
 
 ## Progress
