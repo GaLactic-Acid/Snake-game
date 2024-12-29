@@ -133,16 +133,16 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_W || e.getKeyCode() == KeyEvent.VK_UP) {
             snake.direction = 0;
-            System.out.println("Snake moved up");
+            System.out.println("Snake moved up"); // debugging reference
         } else if (e.getKeyCode() == KeyEvent.VK_S || e.getKeyCode() == KeyEvent.VK_DOWN) {
             snake.direction = 1;
-            System.out.println("Snake moved down");
+            System.out.println("Snake moved down"); // debugging reference
         } else if (e.getKeyCode() == KeyEvent.VK_A || e.getKeyCode() == KeyEvent.VK_LEFT) {
             snake.direction = 2;
-            System.out.println("Snake moved left");
+            System.out.println("Snake moved left"); // debugging reference
         } else if (e.getKeyCode() == KeyEvent.VK_D || e.getKeyCode() == KeyEvent.VK_RIGHT) {
             snake.direction = 3;
-            System.out.println("Snake moved right");
+            System.out.println("Snake moved right"); // debugging reference
         }
         repaint();
     }
