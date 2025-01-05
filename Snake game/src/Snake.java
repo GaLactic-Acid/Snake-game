@@ -72,7 +72,7 @@ public void checkBoundsEndless() {
         snakeX =0;
     }
     if(snakeBody.get(0).y<0 - snakeHeight + 1) {
-        snakeY = panelSize.height;
+        snakeY = panelSize.height - snakeHeight;
     }
     if(snakeBody.get(0).y>panelSize.height - snakeHeight + 1) {
         snakeY = 0;
