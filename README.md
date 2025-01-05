@@ -38,6 +38,9 @@ An attempt at making the classic snake game in Java by myself.
 **29/12/2024**
 - Added reset button
 
+**05/01/2025**
+- Fixed endless Boundary issues.
+
 ## Future Potential Features
 - GameMode where the computer plays the snake game (AI)
 - Add extra obstacles which get more difficult as the game progresses
