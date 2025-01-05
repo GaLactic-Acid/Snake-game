@@ -66,10 +66,10 @@ public class Snake {
 
 public void checkBoundsEndless() {
     if(snakeBody.get(0).x<0-snakeWidth + 1) {
-        snakeX = panelSize.width;
+        snakeX = panelSize.width - snakeWidth;
     }
-    if(snakeBody.get(0).x>=panelSize.width - snakeWidth + 1) {
-        snakeX =0;
+    if(snakeBody.get(0).x>panelSize.width - snakeWidth + 1) {
+        snakeX = 0;
     }
     if(snakeBody.get(0).y<0 - snakeHeight + 1) {
         snakeY = panelSize.height - snakeHeight;
