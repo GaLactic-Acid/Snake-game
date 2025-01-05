@@ -39,6 +39,7 @@ An attempt at making the classic snake game in Java by myself.
 - Added reset button
 
 ## Future Potential Features
+- Fix endless mode glitch where snake stops if it hit upper boundary
 - GameMode where the computer plays the snake game (AI)
 - Add extra obstacles which get more difficult as the game progresses
 - Create a menu to select gameModes
