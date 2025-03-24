@@ -41,9 +41,13 @@ An attempt at making the classic snake game in Java by myself.
 **05/01/2025**
 - Fixed endless Boundary issues.
 
+**24/03/2025**
+- Added Eyes to snake
+
 ## Future Potential Features
 - GameMode where the computer plays the snake game (AI)
 - Add extra obstacles which get more difficult as the game progresses
 - Create a menu to select gameModes
 - More details to the snake and background
+- Refine the code for eyes for easier readibility and less concisiveness 
 - Make game animation more fluent (snake movement is chunky as of now)
