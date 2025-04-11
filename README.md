@@ -45,7 +45,7 @@ An attempt at making the classic snake game in Java by myself.
 - Added Eyes to snake
 
 **11/04/2025**
-- Released Version 1.01 of Snake Game (JAR)
+**- Released Version 1.01 of Snake Game (JAR)**
 
 ## Future Potential Features
 - GameMode where the computer plays the snake game (AI)
