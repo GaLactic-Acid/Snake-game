@@ -15,7 +15,7 @@ public class Snake {
     int snakeHeight = 25;
     Dimension panelSize;
     public ArrayList<Rectangle> snakeBody = new ArrayList<Rectangle>();
-    public Snake(int snakeX, int snakeY, /*Pellet pellet,*/ Dimension panelSize, boolean boundaries) {
+    public Snake(int snakeX, int snakeY, /*Pellet pellet,*/ Dimension panelSize, boolean boundaries) { //Pellet not needed as parameter
         snakeBody.add(new Rectangle(snakeX,snakeY,snakeWidth,snakeHeight));
         for(int i=1; i<4; i++) {
             snakeBody.add(new Rectangle(snakeBody.get(i-1).x-20,snakeBody.get(i-1).x,snakeWidth,snakeHeight));
@@ -109,7 +109,7 @@ public class Snake {
         snakeBody.get(0).setLocation(snakeX, snakeY);
     }
 
-public void checkBoundsEndless() {
+public void checkBoundsEndless() { //not use in MyPanel by default (boundaries = false) in Mypanel Snake Object
     if(snakeBody.get(0).x<0-snakeWidth + 1) {
         snakeX = panelSize.width - snakeWidth;
     }
