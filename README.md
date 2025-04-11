@@ -12,7 +12,7 @@ An attempt at making the classic snake game in Java by myself.
 
 
 ## Progress
-***(Refer to the GitHub repository's commit history to track the raw progress of code development.)***
+***(Refer to the GitHub repository's commit history to track the progress of code development in greater detail.)***
 
 *(Progress before not logged but can be found in github commit history)*
 
@@ -52,5 +52,5 @@ An attempt at making the classic snake game in Java by myself.
 - Add extra obstacles which get more difficult as the game progresses
 - Create a menu to select gameModes
 - More details to the snake and background
-- Refine the code for eyes for easier readibility and less concisiveness 
+- Refine the code for 'eyes' in "Snake.java" for easier readibility and less concisiveness 
 - Make game animation more fluent (snake movement is chunky as of now)
