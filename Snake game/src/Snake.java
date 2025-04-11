@@ -7,7 +7,7 @@ public class Snake {
     public boolean boundaries; // true = walls, false = no walls
     public int snakeX;
     public int snakeY;
-    public Pellet pellet;
+    //public Pellet pellet;
     public int speed=25; // to change snake speed
     public int direction = 3; // 0 = up, 1 = down, 2 = left, 3 = right
     public int pDirection = 3; // previous direction
@@ -15,7 +15,7 @@ public class Snake {
     int snakeHeight = 25;
     Dimension panelSize;
     public ArrayList<Rectangle> snakeBody = new ArrayList<Rectangle>();
-    public Snake(int snakeX, int snakeY, Pellet pellet, Dimension panelSize, boolean boundaries) {
+    public Snake(int snakeX, int snakeY, /*Pellet pellet,*/ Dimension panelSize, boolean boundaries) {
         snakeBody.add(new Rectangle(snakeX,snakeY,snakeWidth,snakeHeight));
         for(int i=1; i<4; i++) {
             snakeBody.add(new Rectangle(snakeBody.get(i-1).x-20,snakeBody.get(i-1).x,snakeWidth,snakeHeight));
@@ -23,7 +23,7 @@ public class Snake {
         }
         this.boundaries = boundaries;
         this.panelSize = panelSize;
-        this.pellet = pellet;
+        //this.pellet = pellet;
         this.snakeX = snakeX;
         this.snakeY = snakeY;
     };

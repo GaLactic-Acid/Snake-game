@@ -29,7 +29,7 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
         this.setPreferredSize(panelSize);
         this.setBackground(Color.BLACK);
         pellet = new Pellet(panelSize);
-        snake = new Snake(PANEL_WIDTH / 2, PANEL_HEIGHT / 2, pellet, panelSize, true); // true = walls, false = no walls
+        snake = new Snake(PANEL_WIDTH / 2, PANEL_HEIGHT / 2, /*pellet,*/ panelSize, true); // true = walls, false = no walls
         this.addKeyListener(this);
         this.setFocusable(true);
         this.requestFocusInWindow();
@@ -155,7 +155,7 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
     }
 
     public void resetGame() {
-        snake = new Snake(PANEL_WIDTH / 2, PANEL_HEIGHT / 2, pellet, panelSize, true);
+        snake = new Snake(PANEL_WIDTH / 2, PANEL_HEIGHT / 2, /*pellet,*/ panelSize, true);
         isGameOver = false;
         resetButton.setVisible(false);
         timer.start();
