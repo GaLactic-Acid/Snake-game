@@ -1,7 +1,7 @@
 # About
 An attempt at making the classic snake game in Java by myself. 
 
-**To download, press [releases](https://github.com/GaLactic-Acid/Snake-game/tags) and download either the 'exe' or 'jar' file of the newest version (currently V1).**
+**To download, press [releases](https://github.com/GaLactic-Acid/Snake-game/tags) and download either the 'exe' or 'jar' file of the newest version (currently V1.01).**
 
 # References
 **All references/resources used for aid in this project:**
