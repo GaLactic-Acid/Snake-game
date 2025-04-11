@@ -32,7 +32,7 @@ An attempt at making the classic snake game in Java by myself.
 
 **28/12/2024**
 - Resolved issue in MyPanel.java's 'actionPerformed' method to prevent illegal snake movement, ensuring the snake cannot move in the opposite direction (e.g., if the snake is moving up, it cannot immediately move down).
-- **First (pre)release of 'Snake Game by Hrithik Singh' in both exe and JAR file form.**
+- **First (pre)release of 'Snake Game by Hrithik Singh' (V1) in both exe and JAR file form.**
 
 
 **29/12/2024**
@@ -43,6 +43,9 @@ An attempt at making the classic snake game in Java by myself.
 
 **24/03/2025**
 - Added Eyes to snake
+
+**11/04/2025**
+- Released Version 1.01 of Snake Game (JAR)
 
 ## Future Potential Features
 - GameMode where the computer plays the snake game (AI)
