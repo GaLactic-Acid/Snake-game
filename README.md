@@ -1,7 +1,7 @@
 # About
 An attempt at making the classic snake game in Java by myself. 
 
-**To download, press [releases](https://github.com/GaLactic-Acid/Snake-game/tags) and download either the 'exe' or 'jar' file of the newest version (currently V1.01).**
+**To download, press [releases](https://github.com/GaLactic-Acid/Snake-game/tags) and download the 'jar' file of the newest version (currently V1.01).**
 
 # References
 **All references/resources used for aid in this project:**
@@ -32,7 +32,7 @@ An attempt at making the classic snake game in Java by myself.
 
 **28/12/2024**
 - Resolved issue in MyPanel.java's 'actionPerformed' method to prevent illegal snake movement, ensuring the snake cannot move in the opposite direction (e.g., if the snake is moving up, it cannot immediately move down).
-- **First (pre)release of 'Snake Game by Hrithik Singh' (V1) in both exe and JAR file form.**
+- **First (pre)release of 'Snake Game by Hrithik Singh' (V1) in JAR file form.**
 
 
 **29/12/2024**
@@ -51,6 +51,7 @@ An attempt at making the classic snake game in Java by myself.
 - Fixed eye bug which didnt account for previous direction (user input)
 - Fixed V1.01 jar file: "A Java exception had occurred" error (caused by reset icon and other images not being in src folder)
 - Reset Icon now shows (was invisible)
+- Removed exe game version support since it required java runtime environment anyways
 
 ## Future Potential Features
 - GameMode where the computer plays the snake game (AI)
