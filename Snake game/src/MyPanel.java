@@ -25,7 +25,7 @@ public class MyPanel extends JPanel implements KeyListener, ActionListener {
     boolean isGameOver = false;
 
     MyPanel() {
-        resetIcon = new ImageIcon("Snake game/images/red reset.png").getImage();
+        resetIcon = new ImageIcon(getClass().getResource("images/red reset.png")).getImage();
         this.setPreferredSize(panelSize);
         this.setBackground(Color.BLACK);
         pellet = new Pellet(panelSize);

@@ -49,29 +49,29 @@ public class Snake {
 
         // Draw pupils
         int pupilSize = 4;
-
-        if (direction == 0) { // Facing up
+// 0 = up, 1 = down, 2 = left, 3 = right
+        if (direction == 1 && pDirection == 0 ||direction == 0 && pDirection != 1) { // Facing up
             snakeG2D.fillRect(head.x + eyeOffsetX, head.y + eyeOffsetY, eyeSize, eyeSize);
             snakeG2D.fillRect(head.x + snakeWidth - eyeOffsetX - eyeSize, head.y + eyeOffsetY, eyeSize, eyeSize);
 
             snakeG2D.setColor(Color.BLACK); // Pupils
             snakeG2D.fillRect(head.x + pupilOffsetX + (eyeSize - pupilSize) / 2, head.y + pupilOffsetY + (eyeSize - pupilSize) / 2, pupilSize, pupilSize);
             snakeG2D.fillRect(head.x + snakeWidth - eyeOffsetX - eyeSize + (eyeSize - pupilSize) / 2, head.y + pupilOffsetY + (eyeSize - pupilSize) / 2, pupilSize, pupilSize);
-        } else if (direction == 1) { // Facing down
+        } else if (direction == 0 && pDirection == 1 || direction == 1 && pDirection != 0) { // Facing down
             snakeG2D.fillRect(head.x + eyeOffsetX, head.y + snakeHeight - eyeOffsetY - eyeSize, eyeSize, eyeSize);
             snakeG2D.fillRect(head.x + snakeWidth - eyeOffsetX - eyeSize, head.y + snakeHeight - eyeOffsetY - eyeSize, eyeSize, eyeSize);
 
             snakeG2D.setColor(Color.BLACK); // Pupils
             snakeG2D.fillRect(head.x + pupilOffsetX + (eyeSize - pupilSize) / 2, head.y + snakeHeight - pupilOffsetY - eyeSize + (eyeSize - pupilSize) / 2, pupilSize, pupilSize);
             snakeG2D.fillRect(head.x + snakeWidth - eyeOffsetX - eyeSize + (eyeSize - pupilSize) / 2, head.y + snakeHeight - pupilOffsetY - eyeSize + (eyeSize - pupilSize) / 2, pupilSize, pupilSize);
-        } else if (direction == 2) { // Facing left
+        } else if (direction == 3 && pDirection == 2 || direction == 2 && pDirection != 3) { // Facing left
             snakeG2D.fillRect(head.x + eyeOffsetY, head.y + eyeOffsetX, eyeSize, eyeSize);
             snakeG2D.fillRect(head.x + eyeOffsetY, head.y + snakeHeight - eyeOffsetX - eyeSize, eyeSize, eyeSize);
 
             snakeG2D.setColor(Color.BLACK); // Pupils
             snakeG2D.fillRect(head.x + pupilOffsetY + (eyeSize - pupilSize) / 2, head.y + pupilOffsetX + (eyeSize - pupilSize) / 2, pupilSize, pupilSize);
             snakeG2D.fillRect(head.x + pupilOffsetY + (eyeSize - pupilSize) / 2, head.y + snakeHeight - eyeOffsetX - eyeSize + (eyeSize - pupilSize) / 2, pupilSize, pupilSize);
-        } else if (direction == 3) { // Facing right
+        } else if (direction == 2 && pDirection == 3 || direction == 3 && pDirection != 2) { // Facing right
             snakeG2D.fillRect(head.x + snakeWidth - eyeOffsetY - eyeSize, head.y + eyeOffsetX, eyeSize, eyeSize);
             snakeG2D.fillRect(head.x + snakeWidth - eyeOffsetY - eyeSize, head.y + snakeHeight - eyeOffsetX - eyeSize, eyeSize, eyeSize);
 
@@ -92,6 +92,7 @@ public class Snake {
     }
 
     public void SnakeUp() {
+        
         moveSnake();
         snakeY-=speed;
     }
