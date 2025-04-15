@@ -51,12 +51,14 @@ An attempt at making the classic snake game in Java by myself.
 - Fixed eye bug which didnt account for previous direction (user input)
 - Fixed V1.01 jar file: "A Java exception had occurred" error (caused by reset icon and other images not being in src folder)
 - Reset Icon now shows (was invisible)
-- Removed exe game version support since it required java runtime environment anyways
+- Removed exe game version support since it required Java Runtime Environment anyway
 
 ## Future Potential Features
 - GameMode where the computer plays the snake game (AI)
-- Add extra obstacles which get more difficult as the game progresses
+- Add extra obstacles that get more difficult as the game progresses
 - Create a menu to select gameModes
-- More details to the snake and background (e.g. interval snake tongue animation)
-- Refine the code for 'eyes' in "Snake.java" for easier readibility and ability to edit
+- More details on the snake and background (e.g. interval snake tongue animation)
+- Refine the code for 'eyes' in "Snake.java" for easier readability and the ability to edit
 - Make game animation more fluent (snake movement is chunky as of now)
+- Option for the user to change the snake colour
+- User can adjust snake speed
