@@ -1,5 +1,5 @@
 # About
-An attempt at making the classic snake game in Java by myself. 
+An attempt at making the classic snake game in Java by myself :) 
 ![snakecopy](https://github.com/user-attachments/assets/d5d5af83-f7d4-4028-9b34-16eb2d5cb0b5)
 **To download, press [releases](https://github.com/GaLactic-Acid/Snake-game/tags) and download the 'jar' file of the newest version (currently V1.01).**
 
