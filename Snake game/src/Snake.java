@@ -11,8 +11,8 @@ public class Snake {
     public int speed=25; // to change snake speed
     public int direction = 3; // 0 = up, 1 = down, 2 = left, 3 = right
     public int pDirection = 3; // previous direction
-    int snakeWidth = 25;
-    int snakeHeight = 25;
+    int snakeWidth = 25; // width of snake body segments
+    int snakeHeight = 25; // height of snake body segments
     Dimension panelSize;
     public ArrayList<Rectangle> snakeBody = new ArrayList<Rectangle>();
     public Snake(int snakeX, int snakeY, /*Pellet pellet,*/ Dimension panelSize, boolean boundaries) { //Pellet not needed as parameter
